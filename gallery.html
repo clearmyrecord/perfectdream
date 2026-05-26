@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery | Perfect Dream Modular</title>
+
+  <style>
+    :root {
+      --bg: #f4f0e8;
+      --dark: #17211b;
+      --gold: #c49a4a;
+      --white: #ffffff;
+      --muted: #6d756f;
+      --line: rgba(23, 33, 27, 0.12);
+      --shadow: 0 24px 70px rgba(23, 33, 27, 0.14);
+      --radius: 28px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--container), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 240, 232, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 1.25rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--dark), var(--gold));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .nav-cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 14px 22px;
+      background: var(--dark);
+      color: white;
+      font-weight: 800;
+      border: none;
+    }
+
+    .hero {
+      padding: 86px 0 54px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 1.12rem;
+      color: var(--muted);
+    }
+
+    .gallery-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .gallery-nav a {
+      padding: 10px 15px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(23, 33, 27, 0.08);
+    }
+
+    .photo-placeholder {
+      min-height: 280px;
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.1), rgba(23, 33, 27, 0.45)),
+        linear-gradient(135deg, #d8d1bf, #8c987f);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: white;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.78rem;
+      padding: 24px;
+    }
+
+    .gallery-card:nth-child(2n) .photo-placeholder {
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.1), rgba(23, 33, 27, 0.45)),
+        linear-gradient(135deg, #bca56b, #455743);
+    }
+
+    .gallery-card:nth-child(3n) .photo-placeholder {
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.1), rgba(23, 33, 27, 0.45)),
+        linear-gradient(135deg, #39483b, #c49a4a);
+    }
+
+    .gallery-body {
+      padding: 20px;
+    }
+
+    .gallery-body h3 {
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .gallery-body p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .cta {
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.86), rgba(23, 33, 27, 0.92)),
+        linear-gradient(135deg, #17211b, #c49a4a);
+      color: white;
+      border-radius: 44px;
+      padding: 58px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.74);
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    footer {
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .cta { padding: 32px; border-radius: 30px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="nav">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PD</span>
+          <span>Perfect Dream Modular</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#products">Products</a>
+          <a href="index.html#contact" class="nav-cta">Request Pricing</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Photo Gallery</span>
+        <h1>Explore modular possibilities.</h1>
+        <p>
+          Browse placeholder galleries for modular homes, ADUs, container hotels, restaurants, offices,
+          retail units, restrooms, pools, landmarks, and custom builds.
+        </p>
+
+        <div class="gallery-nav">
+          <a href="#homes">Homes</a>
+          <a href="#hotels">Hotels</a>
+          <a href="#commercial">Commercial</a>
+          <a href="#amenities">Amenities</a>
+          <a href="#custom">Custom</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="homes">
+      <div class="container">
+        <div class="section-head">
+          <h2>Homes & ADUs</h2>
+          <p>Use these slots for residential units, backyard homes, guest houses, and compact living concepts.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Modular Home Exterior</div>
+            <div class="gallery-body">
+              <h3>Modern Modular Home</h3>
+              <p>Exterior residential concept.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>ADU Backyard Unit</div>
+            <div class="gallery-body">
+              <h3>Backyard ADU</h3>
+              <p>Guest house or rental income unit.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Interior Living Space</div>
+            <div class="gallery-body">
+              <h3>Interior Layout</h3>
+              <p>Living room, kitchen, and bedroom views.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hotels">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hotels & Resorts</h2>
+          <p>Use these slots for container hotels, luxury resorts, cabins, glamping units, and hospitality projects.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Container Hotel</div>
+            <div class="gallery-body">
+              <h3>Container Hotel</h3>
+              <p>Multi-unit hospitality concept.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Luxury Resort Unit</div>
+            <div class="gallery-body">
+              <h3>Luxury Resort Module</h3>
+              <p>Premium destination-style design.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Cabin / Glamping Unit</div>
+            <div class="gallery-body">
+              <h3>Cabin & Glamping Unit</h3>
+              <p>Outdoor hospitality structure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commercial">
+      <div class="container">
+        <div class="section-head">
+          <h2>Commercial Buildings</h2>
+          <p>Use these slots for offices, restaurants, coffee shops, bars, retail shops, and pop-up businesses.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Office Building</div>
+            <div class="gallery-body">
+              <h3>Office Module</h3>
+              <p>Professional workspace or job-site office.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Restaurant / Cafe</div>
+            <div class="gallery-body">
+              <h3>Restaurant & Cafe</h3>
+              <p>Food and beverage modular concept.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Retail Storefront</div>
+            <div class="gallery-body">
+              <h3>Retail Storefront</h3>
+              <p>Pop-up shop or permanent container retail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amenities">
+      <div class="container">
+        <div class="section-head">
+          <h2>Amenities & Facilities</h2>
+          <p>Use these slots for restrooms, pools, bars, lounges, event facilities, and outdoor support buildings.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Restroom Facility</div>
+            <div class="gallery-body">
+              <h3>Restroom Building</h3>
+              <p>Public, event, park, or resort restroom module.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Container Pool</div>
+            <div class="gallery-body">
+              <h3>Container Pool</h3>
+              <p>Residential, resort, or commercial pool concept.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Bar / Lounge</div>
+            <div class="gallery-body">
+              <h3>Bar & Lounge</h3>
+              <p>Entertainment and hospitality module.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="custom">
+      <div class="container">
+        <div class="section-head">
+          <h2>Landmarks & Custom Projects</h2>
+          <p>Use these slots for landmark structures, branded attractions, custom developments, and one-off builds.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Landmark Structure</div>
+            <div class="gallery-body">
+              <h3>Landmark Build</h3>
+              <p>Statement architecture or destination feature.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Mixed-Use Development</div>
+            <div class="gallery-body">
+              <h3>Mixed-Use Concept</h3>
+              <p>Retail, housing, hospitality, and amenities together.</p>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="photo-placeholder">Image Placeholder<br>Custom Project</div>
+            <div class="gallery-body">
+              <h3>Custom Modular Project</h3>
+              <p>Unique project designed around your vision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <span class="eyebrow">Start Your Project</span>
+          <h2>Have land, a concept, or a development idea?</h2>
+          <p>
+            Send us your project type, location, timeline, and budget range. We’ll help identify the right modular solution.
+          </p>
+          <a href="mailto:info@perfectdreammodular.com?subject=Perfect%20Dream%20Modular%20Gallery%20Inquiry" class="btn">
+            Request Project Info
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Perfect Dream Modular. All rights reserved.</div>
+      <div>Exclusive U.S. Distributor: United Painters Worldwide</div>
+    </div>
+  </footer>
+</body>
+</html>
