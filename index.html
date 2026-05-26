@@ -3,381 +3,756 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfect Dream Modular | Modular Homes, Hotels & Commercial Buildings</title>
+  <meta name="description" content="Perfect Dream Modular provides modular homes, container buildings, hotels, ADUs, offices, retail units, restaurants, pools, restrooms, and custom prefab structures through United Painters Worldwide." />
 
-  <title>Perfect Dream Modular | Exclusive U.S. Distributor for PD Modular</title>
-  <meta name="description" content="Perfect Dream Modular connects U.S. developers, homeowners, resorts, contractors, and municipalities with PD Modular container-based building systems through United Painters Worldwide, LLC." />
+  <style>
+    :root {
+      --bg: #f4f0e8;
+      --dark: #17211b;
+      --dark-2: #243326;
+      --gold: #c49a4a;
+      --gold-light: #f0d58d;
+      --white: #ffffff;
+      --muted: #6d756f;
+      --line: rgba(23, 33, 27, 0.12);
+      --shadow: 0 24px 70px rgba(23, 33, 27, 0.16);
+      --radius: 28px;
+      --container: 1180px;
+    }
 
-  <meta property="og:title" content="Perfect Dream Modular | U.S. Distributor for PD Modular" />
-  <meta property="og:description" content="Modular living, commercial builds, container pools, restrooms, shelters, hospitality units, and custom container-based projects for the U.S. market." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://perfectdreammodular.com/" />
-  <meta property="og:site_name" content="Perfect Dream Modular" />
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <link rel="canonical" href="https://perfectdreammodular.com/" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=3" />
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 240, 232, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 1.25rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--dark), var(--gold));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 14px 22px;
+      background: var(--dark);
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 14px 34px rgba(23, 33, 27, 0.18);
+      border: none;
+    }
+
+    .btn.gold {
+      background: linear-gradient(135deg, var(--gold), #a87322);
+    }
+
+    .btn.light {
+      background: white;
+      color: var(--dark);
+    }
+
+    .hero {
+      padding: 84px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--dark-2);
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 640px;
+      font-size: 1.18rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 680px;
+    }
+
+    .trust-card {
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .trust-card strong {
+      display: block;
+      font-size: 1.4rem;
+      letter-spacing: -0.04em;
+    }
+
+    .trust-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      background: var(--dark);
+      border-radius: 36px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transform: rotate(1deg);
+    }
+
+    .hero-photo {
+      min-height: 520px;
+      border-radius: 26px;
+      border: 1px dashed rgba(255, 255, 255, 0.35);
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.28), rgba(23, 33, 27, 0.72)),
+        linear-gradient(135deg, #516151, #c49a4a);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      color: white;
+    }
+
+    .hero-photo h3 {
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4.4vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(23, 33, 27, 0.08);
+    }
+
+    .photo-placeholder {
+      min-height: 240px;
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.08), rgba(23, 33, 27, 0.36)),
+        linear-gradient(135deg, #d8d1bf, #8c987f);
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      color: white;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.78rem;
+    }
+
+    .product-card:nth-child(2n) .photo-placeholder {
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.08), rgba(23, 33, 27, 0.36)),
+        linear-gradient(135deg, #bca56b, #455743);
+    }
+
+    .product-card:nth-child(3n) .photo-placeholder {
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.08), rgba(23, 33, 27, 0.36)),
+        linear-gradient(135deg, #39483b, #c49a4a);
+    }
+
+    .product-body {
+      padding: 24px;
+    }
+
+    .product-body h3 {
+      font-size: 1.35rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .product-body p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--dark-2);
+      background: #f4f0e8;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+    }
+
+    .split {
+      background: var(--dark);
+      color: white;
+      border-radius: 44px;
+      padding: 54px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .split p {
+      color: rgba(255, 255, 255, 0.74);
+      margin-bottom: 22px;
+    }
+
+    .split-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .split-item {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .split-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      background:
+        linear-gradient(rgba(23, 33, 27, 0.84), rgba(23, 33, 27, 0.9)),
+        linear-gradient(135deg, #17211b, #c49a4a);
+      color: white;
+      border-radius: 44px;
+      padding: 64px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.74);
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: 1.08rem;
+    }
+
+    footer {
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 54px;
+      }
+
+      .product-grid,
+      .process-grid,
+      .trust-row {
+        grid-template-columns: 1fr;
+      }
+
+      .split,
+      .cta {
+        padding: 32px;
+        border-radius: 30px;
+      }
+
+      .hero-photo {
+        min-height: 360px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="/index.html" class="brand" aria-label="Perfect Dream Modular Home">
-        <span class="brand-mark">PDM</span>
-        <span>
-          <strong>Perfect Dream Modular</strong>
-          <small>Exclusive U.S. Distributor</small>
-        </span>
-      </a>
+    <div class="container">
+      <div class="nav">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">PD</span>
+          <span>Perfect Dream Modular</span>
+        </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="site-nav">
-        <a href="/index.html" class="active">Home</a>
-        <a href="/products.html">Products</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/distribution.html">Distribution</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html" class="nav-cta">Request a Quote</a>
-      </nav>
+        <nav class="nav-links">
+          <a href="#products">Products</a>
+          <a href="#why">Why Modular</a>
+          <a href="#process">Process</a>
+          <a href="#contact" class="nav-cta">Request Pricing</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-bg-grid"></div>
-
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">United Painters Worldwide, LLC · U.S. Distributor Channel</p>
-
-          <h1>Modular Living. Commercial Builds. Container Pools. Delivered Through a U.S. Distributor.</h1>
-
-          <p class="hero-text">
-            Perfect Dream Modular connects U.S. developers, homeowners, resorts, contractors, and municipalities with
-            PD Modular’s container-based building systems through United Painters Worldwide, LLC.
+        <div>
+          <span class="eyebrow">Exclusive U.S. Distributor</span>
+          <h1>Modular buildings built for speed, scale, and opportunity.</h1>
+          <p>
+            Perfect Dream Modular delivers prefab homes, ADUs, hotels, commercial buildings, retail units, restaurants,
+            restrooms, pools, and custom container-based developments through United Painters Worldwide.
           </p>
 
           <div class="hero-actions">
-            <a href="/contact.html" class="btn btn-primary">Request a Quote</a>
-            <a href="/products.html" class="btn btn-secondary">View Products</a>
+            <a href="#products" class="btn gold">View Product Types</a>
+            <a href="#contact" class="btn">Request Quote</a>
           </div>
 
-          <div class="hero-proof">
-            <span>Residential</span>
-            <span>Commercial</span>
-            <span>Hospitality</span>
-            <span>Municipal</span>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-label="Modular development visual placeholder">
-          <div class="visual-card visual-card-large">
-            <div class="visual-label">Container-Based Building Systems</div>
-            <div class="module-stack">
-              <span></span>
-              <span></span>
-              <span></span>
+          <div class="trust-row">
+            <div class="trust-card">
+              <strong>Prefab</strong>
+              <span>Factory-built structures</span>
+            </div>
+            <div class="trust-card">
+              <strong>Custom</strong>
+              <span>Designed for each project</span>
+            </div>
+            <div class="trust-card">
+              <strong>U.S.</strong>
+              <span>Distribution support</span>
             </div>
           </div>
+        </div>
 
-          <div class="floating-card card-top">
-            <strong>Container Pools</strong>
-            <small>Backyards · Resorts · Clubs</small>
-          </div>
-
-          <div class="floating-card card-bottom">
-            <strong>ADUs + Modular Units</strong>
-            <small>Housing · Lodging · Offices</small>
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <div>
+              <h3>Hero Project Image</h3>
+              <p>Replace this area with your best modular resort, home, or commercial render.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container trust-grid">
-        <div>
-          <strong>Exclusive U.S. Distributor</strong>
-          <span>Represented through United Painters Worldwide</span>
-        </div>
-
-        <div>
-          <strong>Factory-Built Modular Systems</strong>
-          <span>Container-based product categories</span>
-        </div>
-
-        <div>
-          <strong>Residential + Commercial</strong>
-          <span>Homes, hospitality, businesses, and job sites</span>
-        </div>
-
-        <div>
-          <strong>Pools + Restrooms + Shelters</strong>
-          <span>Specialty units for scalable projects</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
+    <section id="products">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Product Categories</p>
-          <h2>Modular systems for property owners, developers, resorts, contractors, and entrepreneurs.</h2>
+        <div class="section-head center">
+          <span class="eyebrow">Product Categories</span>
+          <h2>One platform. Many modular possibilities.</h2>
           <p>
-            Perfect Dream Modular helps U.S. buyers explore container-based building products for housing,
-            hospitality, commercial, event, municipal, and specialty applications.
+            Use the placeholders below for photos, renderings, or AI mockups of each product type.
           </p>
         </div>
 
         <div class="product-grid">
           <article class="product-card">
-            <div class="card-icon">≋</div>
-            <h3>Container Pools</h3>
-            <p>Factory-built pool concepts for homes, resorts, hospitality venues, and outdoor entertainment projects.</p>
-            <a href="/products.html#container-pools">Explore Pools</a>
+            <div class="photo-placeholder">Photo Placeholder<br>Modular Homes</div>
+            <div class="product-body">
+              <h3>Modular Homes</h3>
+              <p>Modern prefab homes designed for faster deployment, flexible layouts, and scalable residential development.</p>
+              <div class="tag-list">
+                <span class="tag">Residential</span>
+                <span class="tag">Prefab</span>
+                <span class="tag">Custom Layouts</span>
+              </div>
+            </div>
           </article>
 
           <article class="product-card">
-            <div class="card-icon">⌂</div>
-            <h3>Expandable & Folding Homes</h3>
-            <p>Flexible modular living units designed for faster deployment, efficient transport, and adaptable layouts.</p>
-            <a href="/products.html#expandable-homes">Explore Homes</a>
+            <div class="photo-placeholder">Photo Placeholder<br>ADUs</div>
+            <div class="product-body">
+              <h3>ADUs & Backyard Units</h3>
+              <p>Accessory dwelling units for rental income, family housing, guest suites, and compact living solutions.</p>
+              <div class="tag-list">
+                <span class="tag">ADU</span>
+                <span class="tag">Guest House</span>
+                <span class="tag">Rental Income</span>
+              </div>
+            </div>
           </article>
 
           <article class="product-card">
-            <div class="card-icon">▣</div>
-            <h3>ADUs & Modular Living Units</h3>
-            <p>Backyard housing, guest units, rental concepts, workforce housing, and compact living solutions.</p>
-            <a href="/products.html#adus">Explore ADUs</a>
+            <div class="photo-placeholder">Photo Placeholder<br>Container Hotels</div>
+            <div class="product-body">
+              <h3>Container Hotels</h3>
+              <p>Modular hospitality units for resorts, glamping destinations, workforce housing, and boutique hotel concepts.</p>
+              <div class="tag-list">
+                <span class="tag">Hotels</span>
+                <span class="tag">Resorts</span>
+                <span class="tag">Hospitality</span>
+              </div>
+            </div>
           </article>
 
           <article class="product-card">
-            <div class="card-icon">◆</div>
-            <h3>Hotels, Resorts & Campsites</h3>
-            <p>Container-based lodging concepts for glamping sites, travel hotels, retreat villages, and resorts.</p>
-            <a href="/projects.html">View Concepts</a>
+            <div class="photo-placeholder">Photo Placeholder<br>Offices</div>
+            <div class="product-body">
+              <h3>Offices & Workspaces</h3>
+              <p>Clean, professional office modules for job sites, campuses, remote operations, and expanding businesses.</p>
+              <div class="tag-list">
+                <span class="tag">Office</span>
+                <span class="tag">Job Site</span>
+                <span class="tag">Business</span>
+              </div>
+            </div>
           </article>
 
           <article class="product-card">
-            <div class="card-icon">☰</div>
-            <h3>Portable Restroom & Shower Units</h3>
-            <p>Restroom, shower, and sanitation units for events, job sites, resorts, parks, and public facilities.</p>
-            <a href="/products.html#restrooms">Explore Units</a>
+            <div class="photo-placeholder">Photo Placeholder<br>Retail Shops</div>
+            <div class="product-body">
+              <h3>Retail & Pop-Up Shops</h3>
+              <p>Container storefronts for vendors, retail brands, outdoor markets, events, and high-traffic sales locations.</p>
+              <div class="tag-list">
+                <span class="tag">Retail</span>
+                <span class="tag">Pop-Up</span>
+                <span class="tag">Events</span>
+              </div>
+            </div>
           </article>
 
           <article class="product-card">
-            <div class="card-icon">▤</div>
-            <h3>Commercial Containers</h3>
-            <p>Bars, cafes, kitchens, offices, retail pop-ups, ticket booths, and customer-facing business units.</p>
-            <a href="/products.html#commercial">Explore Commercial</a>
+            <div class="photo-placeholder">Photo Placeholder<br>Restaurants</div>
+            <div class="product-body">
+              <h3>Restaurants, Cafes & Bars</h3>
+              <p>Food and beverage modules built for restaurants, coffee shops, bars, food courts, and entertainment venues.</p>
+              <div class="tag-list">
+                <span class="tag">Restaurant</span>
+                <span class="tag">Cafe</span>
+                <span class="tag">Bar</span>
+              </div>
+            </div>
           </article>
 
           <article class="product-card">
-            <div class="card-icon">✚</div>
-            <h3>Telecom, Medical & Security Shelters</h3>
-            <p>Specialty container structures for field operations, medical support, telecom, security, and emergency use.</p>
-            <a href="/products.html#shelters">Explore Shelters</a>
+            <div class="photo-placeholder">Photo Placeholder<br>Restrooms</div>
+            <div class="product-body">
+              <h3>Restroom Buildings</h3>
+              <p>Durable restroom modules for parks, events, construction sites, resorts, campgrounds, and public facilities.</p>
+              <div class="tag-list">
+                <span class="tag">Restrooms</span>
+                <span class="tag">Public Use</span>
+                <span class="tag">Facilities</span>
+              </div>
+            </div>
           </article>
 
           <article class="product-card">
-            <div class="card-icon">◎</div>
-            <h3>Custom Complex Design</h3>
-            <p>Multi-unit developments, landmark builds, container villages, mixed-use layouts, and branded environments.</p>
-            <a href="/contact.html">Start a Custom Project</a>
+            <div class="photo-placeholder">Photo Placeholder<br>Pools</div>
+            <div class="product-body">
+              <h3>Container Pools</h3>
+              <p>Modern container-based swimming pools for homes, hotels, resorts, outdoor venues, and luxury developments.</p>
+              <div class="tag-list">
+                <span class="tag">Pools</span>
+                <span class="tag">Luxury</span>
+                <span class="tag">Outdoor Living</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="photo-placeholder">Photo Placeholder<br>Landmarks</div>
+            <div class="product-body">
+              <h3>Landmarks & Custom Builds</h3>
+              <p>Statement structures, branded attractions, monuments, sales centers, and one-of-a-kind modular concepts.</p>
+              <div class="tag-list">
+                <span class="tag">Custom</span>
+                <span class="tag">Landmarks</span>
+                <span class="tag">Experiential</span>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section distributor-section">
-      <div class="container split-grid">
-        <div>
-          <p class="eyebrow">U.S. Distributor Role</p>
-          <h2>American-facing sales, scoping, and project coordination.</h2>
-
-          <p>
-            United Painters Worldwide, LLC serves as the U.S. distributor channel for Perfect Dream Modular inquiries.
-            We help buyers define the project, understand product categories, prepare quote requests, communicate with
-            the factory, and plan the next steps for logistics, site preparation, and local compliance.
-          </p>
-
-          <div class="check-list">
-            <span>Lead intake and buyer education</span>
-            <span>Product and package selection</span>
-            <span>Quote preparation and project scoping</span>
-            <span>Factory communication and coordination</span>
-            <span>Logistics, import, and delivery guidance</span>
-            <span>Contractor, developer, and owner coordination</span>
-          </div>
-
-          <a href="/distribution.html" class="btn btn-primary">How Distribution Works</a>
-        </div>
-
-        <div class="stat-panel">
-          <div class="stat-card">
-            <strong>01</strong>
-            <span>Project Inquiry</span>
-          </div>
-
-          <div class="stat-card">
-            <strong>02</strong>
-            <span>Scope + Product Match</span>
-          </div>
-
-          <div class="stat-card">
-            <strong>03</strong>
-            <span>Factory Quote Coordination</span>
-          </div>
-
-          <div class="stat-card">
-            <strong>04</strong>
-            <span>Delivery + Site Planning</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
+    <section id="why">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Project Use Cases</p>
-          <h2>From backyard ADUs to full modular destinations.</h2>
-          <p>
-            Perfect Dream Modular is built for buyers who need practical structures, memorable environments,
-            and scalable development concepts.
-          </p>
-        </div>
+        <div class="split">
+          <div>
+            <span class="eyebrow">Why Perfect Dream Modular</span>
+            <h2>Built faster than traditional construction.</h2>
+            <p>
+              Modular construction gives developers, property owners, investors, and operators a smarter path to launch.
+              Units can be designed for housing, hospitality, commercial use, or custom destination concepts.
+            </p>
+            <a href="#contact" class="btn gold">Start a Project</a>
+          </div>
 
-        <div class="use-case-grid">
-          <div class="use-case">ADUs</div>
-          <div class="use-case">Backyard Pools</div>
-          <div class="use-case">Glamping Resorts</div>
-          <div class="use-case">Workforce Housing</div>
-          <div class="use-case">Event Venues</div>
-          <div class="use-case">Emergency Facilities</div>
-          <div class="use-case">Police & Security Offices</div>
-          <div class="use-case">Retail Pop-Ups</div>
-          <div class="use-case">Commercial Streets</div>
-          <div class="use-case">Hotels</div>
+          <div class="split-list">
+            <div class="split-item">
+              <strong>Speed to Market</strong>
+              <span>Factory-built systems can reduce delays compared with traditional ground-up construction.</span>
+            </div>
+            <div class="split-item">
+              <strong>Scalable Product Line</strong>
+              <span>Start with one unit or build a full modular development with multiple product types.</span>
+            </div>
+            <div class="split-item">
+              <strong>Commercial Flexibility</strong>
+              <span>Homes, hotels, retail, restaurants, offices, restrooms, pools, and custom projects.</span>
+            </div>
+            <div class="split-item">
+              <strong>U.S. Distribution Support</strong>
+              <span>United Painters Worldwide supports American customers, developers, and project partners.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section process-section">
+    <section id="process">
       <div class="container">
-        <div class="section-heading inverted">
-          <p class="eyebrow">Process</p>
-          <h2>A clear path from idea to modular project scope.</h2>
+        <div class="section-head center">
+          <span class="eyebrow">How It Works</span>
+          <h2>From concept to modular delivery.</h2>
+          <p>
+            A simple path for developers, entrepreneurs, landowners, municipalities, and commercial operators.
+          </p>
         </div>
 
         <div class="process-grid">
-          <article>
-            <span>01</span>
-            <h3>Project Inquiry</h3>
-            <p>Tell us what you want to build, where it is located, and what product category fits the project.</p>
-          </article>
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Choose Product Type</h3>
+            <p>Select the modular structure that fits your project: home, ADU, hotel, office, retail, restaurant, restroom, pool, or custom build.</p>
+          </div>
 
-          <article>
-            <span>02</span>
-            <h3>Product Selection</h3>
-            <p>We help match your use case to available modular product categories and configuration options.</p>
-          </article>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Define Site & Use</h3>
+            <p>Share your land, location, intended use, approximate size, timeline, and budget expectations.</p>
+          </div>
 
-          <article>
-            <span>03</span>
-            <h3>Quote & Scope</h3>
-            <p>We coordinate the details needed to pursue pricing, production scope, and project expectations.</p>
-          </article>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Customize Design</h3>
+            <p>Review layout options, finishes, exterior style, interior needs, branding, and utility requirements.</p>
+          </div>
 
-          <article>
-            <span>04</span>
-            <h3>Factory Production</h3>
-            <p>Once approved, factory production is coordinated according to the selected product and order scope.</p>
-          </article>
-
-          <article>
-            <span>05</span>
-            <h3>Shipping & Delivery Coordination</h3>
-            <p>We help buyers understand shipping, import, delivery, and receiving considerations.</p>
-          </article>
-
-          <article>
-            <span>06</span>
-            <h3>Site Prep & Installation Planning</h3>
-            <p>Local contractors, engineers, and officials must confirm foundations, utilities, permits, and code needs.</p>
-          </article>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Quote & Coordinate</h3>
+            <p>We help coordinate pricing, production details, import planning, and next steps for your project.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-light">
-      <div class="container cta-panel">
-        <div>
-          <p class="eyebrow">Start the Conversation</p>
-          <h2>Tell us what you want to build.</h2>
-          <p>
-            Whether you are exploring a backyard ADU, container pool, modular business, resort village,
-            or municipal unit, the first step is a project inquiry.
-          </p>
-        </div>
-
-        <a href="/contact.html" class="btn btn-primary">Request a Quote</a>
-      </div>
-    </section>
-
-    <section class="compliance-note">
+    <section id="contact">
       <div class="container">
-        <strong>Important Compliance Notice:</strong>
-        <p>
-          Permits, zoning, engineering, foundations, utility hookups, installation, tariffs, shipping costs,
-          inspections, and local code compliance vary by jurisdiction and must be confirmed before purchase.
-          Perfect Dream Modular and United Painters Worldwide, LLC do not replace licensed local engineers,
-          architects, contractors, customs brokers, or permitting authorities.
-        </p>
+        <div class="cta">
+          <span class="eyebrow">Request Pricing</span>
+          <h2>Ready to build your perfect modular project?</h2>
+          <p>
+            Tell us what you want to build, where it will be located, and which product type you are interested in.
+            We will help you identify the right modular solution.
+          </p>
+          <a href="mailto:info@perfectdreammodular.com?subject=Perfect%20Dream%20Modular%20Project%20Request" class="btn light">
+            Email Project Request
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="/index.html" class="brand footer-brand">
-          <span class="brand-mark">PDM</span>
-          <span>
-            <strong>Perfect Dream Modular</strong>
-            <small>Exclusive U.S. Distributor for PD Modular</small>
-          </span>
-        </a>
-
-        <p>
-          U.S.-facing modular product distribution through United Painters Worldwide, LLC.
-        </p>
-      </div>
-
-      <div>
-        <h4>Explore</h4>
-        <a href="/products.html">Products</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/distribution.html">Distribution</a>
-        <a href="/about.html">About</a>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <a href="mailto:Matt@UnitedPaintersWW.com">Matt@UnitedPaintersWW.com</a>
-        <a href="tel:+18656219810">(865) 621-9810</a>
-        <a href="/contact.html">Request a Quote</a>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <span>© <span id="year"></span> Perfect Dream Modular. All rights reserved.</span>
-      <span>Operated through United Painters Worldwide, LLC.</span>
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Perfect Dream Modular. All rights reserved.</div>
+      <div>Exclusive U.S. Distributor: United Painters Worldwide</div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js?v=3"></script>
 </body>
 </html>
