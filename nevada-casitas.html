@@ -1,0 +1,616 @@
+<!-- Save as: nevada-casitas.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nevada Casitas | Perfect Dream Modular</title>
+  <meta name="description" content="Perfect Dream Modular helps Nevada homeowners build backyard casitas, ADUs, guest houses, rental units, and workforce housing solutions." />
+
+  <style>
+    :root {
+      --dark: #111827;
+      --gold: #d4a017;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --white: #ffffff;
+      --green: #166534;
+      --blue: #1e40af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: var(--dark);
+      color: var(--white);
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      opacity: .9;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 90vh;
+      background:
+        linear-gradient(rgba(17,24,39,.78), rgba(17,24,39,.78)),
+        url("images/casita-hero.jpg");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      padding: 80px 6%;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      max-width: 650px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 15px 26px;
+      border-radius: 8px;
+      font-weight: 800;
+      margin: 8px 8px 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    .section-title {
+      max-width: 850px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .card p {
+      color: var(--gray);
+    }
+
+    .highlight {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .highlight .section-title p {
+      color: #cbd5e1;
+    }
+
+    .steps {
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 70px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 25px;
+      width: 45px;
+      height: 45px;
+      background: var(--gold);
+      color: var(--dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    .models .card {
+      border-top: 6px solid var(--gold);
+    }
+
+    .model-size {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      margin: 10px 0;
+    }
+
+    .use-list {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .use-list li {
+      padding: 6px 0;
+      color: var(--gray);
+    }
+
+    .use-list li::before {
+      content: "✓ ";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--blue), var(--dark));
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.15rem;
+    }
+
+    form {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, .1);
+    }
+
+    form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    footer {
+      background: #020617;
+      color: var(--white);
+      padding: 45px 6%;
+      text-align: center;
+    }
+
+    footer p {
+      color: #cbd5e1;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 15px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .step {
+        padding-left: 0;
+        padding-top: 60px;
+      }
+
+      .step::before {
+        top: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Perfect Dream Modular</div>
+    <nav>
+      <a href="#why-now">Why Now</a>
+      <a href="#models">Models</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Free Evaluation</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">Nevada Casitas & ADUs</span>
+      <h1>Your Backyard Could Become Your Next Investment.</h1>
+      <p>
+        Perfect Dream Modular helps Nevada homeowners build backyard casitas,
+        guest houses, rental units, home offices, and workforce housing solutions.
+      </p>
+      <a href="#contact" class="btn">Schedule Free Property Evaluation</a>
+      <a href="#models" class="btn secondary">View Models</a>
+    </div>
+  </section>
+
+  <section id="why-now">
+    <div class="section-title">
+      <h2>Nevada Changed The Rules. We Help You Build.</h2>
+      <p>
+        Nevada's new ADU momentum is creating opportunities for homeowners,
+        investors, families, and employers to add flexible housing options.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Rental Income</h3>
+        <p>Turn unused backyard space into a long-term income-producing asset.</p>
+      </div>
+
+      <div class="card">
+        <h3>Family Housing</h3>
+        <p>Create private space for parents, adult children, guests, or caregivers.</p>
+      </div>
+
+      <div class="card">
+        <h3>Home Office</h3>
+        <p>Build a quiet backyard workspace, studio, gym, or creative retreat.</p>
+      </div>
+
+      <div class="card">
+        <h3>Workforce Housing</h3>
+        <p>Support employees, hospitality workers, nurses, teachers, and local staff.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight">
+    <div class="section-title">
+      <h2>What Can You Build?</h2>
+      <p>Factory-built modular spaces designed for speed, flexibility, and long-term value.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Detached Casitas</h3>
+        <p>Private backyard homes for guests, family, or rentals.</p>
+      </div>
+
+      <div class="card">
+        <h3>Guest Suites</h3>
+        <p>Comfortable living spaces with bedroom, bathroom, and kitchenette options.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pool Houses</h3>
+        <p>Upgrade your backyard with a luxury poolside structure.</p>
+      </div>
+
+      <div class="card">
+        <h3>Backyard Offices</h3>
+        <p>Professional workspaces separated from your main home.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="models" class="models">
+    <div class="section-title">
+      <h2>Featured Modular Models</h2>
+      <p>Use these as placeholder product blocks. Replace names, sizes, and photos as needed.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>The Oasis</h3>
+        <div class="model-size">400 sq ft</div>
+        <p>1 Bed / 1 Bath</p>
+        <ul class="use-list">
+          <li>Guest house</li>
+          <li>In-law suite</li>
+          <li>Rental casita</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>The Executive</h3>
+        <div class="model-size">300 sq ft</div>
+        <p>Studio / Office</p>
+        <ul class="use-list">
+          <li>Home office</li>
+          <li>Creative studio</li>
+          <li>Wellness room</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>The Retreat</h3>
+        <div class="model-size">600 sq ft</div>
+        <p>1 Bed / 1 Bath</p>
+        <ul class="use-list">
+          <li>Long-term rental</li>
+          <li>Adult child housing</li>
+          <li>Employee housing</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>The Horizon</h3>
+        <div class="model-size">800 sq ft</div>
+        <p>2 Bed / 1 Bath</p>
+        <ul class="use-list">
+          <li>Workforce housing</li>
+          <li>Family expansion</li>
+          <li>Investment property</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="section-title">
+      <h2>Our Turnkey Process</h2>
+      <p>From first conversation to installation, we help guide the path forward.</p>
+    </div>
+
+    <div class="grid steps">
+      <div class="card step">
+        <h3>Free Property Evaluation</h3>
+        <p>We review your address, goals, lot conditions, and potential fit.</p>
+      </div>
+
+      <div class="card step">
+        <h3>Site Assessment</h3>
+        <p>We look at access, utilities, placement, setbacks, and installation needs.</p>
+      </div>
+
+      <div class="card step">
+        <h3>Choose Your Model</h3>
+        <p>Select a modular design that fits your property and budget.</p>
+      </div>
+
+      <div class="card step">
+        <h3>Permitting Coordination</h3>
+        <p>We help coordinate local requirements with the proper professionals.</p>
+      </div>
+
+      <div class="card step">
+        <h3>Delivery & Installation</h3>
+        <p>Your modular unit is delivered, placed, and prepared for final completion.</p>
+      </div>
+
+      <div class="card step">
+        <h3>Move In Or Rent Out</h3>
+        <p>Use your new space for family, guests, tenants, employees, or business.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Nevada's Backyard Housing Opportunity Is Here.</h2>
+    <p>
+      Whether you want rental income, family housing, or a private backyard retreat,
+      Perfect Dream Modular can help you explore the next step.
+    </p>
+    <a href="#contact" class="btn">Start Free Evaluation</a>
+  </section>
+
+  <section id="contact">
+    <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+      <h2>Free Property Eligibility Check</h2>
+
+      <div class="form-grid">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+
+        <div>
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" placeholder="Las Vegas, Henderson, etc." />
+        </div>
+
+        <div class="full">
+          <label for="address">Property Address</label>
+          <input id="address" name="address" type="text" />
+        </div>
+
+        <div>
+          <label for="hoa">Is the property in an HOA?</label>
+          <select id="hoa" name="hoa">
+            <option value="">Select one</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="goal">Primary Goal</label>
+          <select id="goal" name="goal">
+            <option value="">Select one</option>
+            <option>Rental Income</option>
+            <option>Family Housing</option>
+            <option>Guest House</option>
+            <option>Home Office</option>
+            <option>Pool House</option>
+            <option>Workforce Housing</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="timeline">Target Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select one</option>
+            <option>ASAP</option>
+            <option>3 Months</option>
+            <option>6 Months</option>
+            <option>12 Months</option>
+            <option>Just researching</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="budget">Estimated Budget</label>
+          <select id="budget" name="budget">
+            <option value="">Select one</option>
+            <option>Under $50,000</option>
+            <option>$50,000 - $100,000</option>
+            <option>$100,000 - $150,000</option>
+            <option>$150,000+</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="message">Tell us about your property or project</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+
+        <div class="full">
+          <button class="btn" type="submit">Submit Free Evaluation Request</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <h3>Perfect Dream Modular</h3>
+    <p>Nevada's Turnkey Casita & ADU Provider</p>
+    <p>Las Vegas, Nevada</p>
+    <p>info@perfectdreammodular.com</p>
+  </footer>
+
+</body>
+</html>
