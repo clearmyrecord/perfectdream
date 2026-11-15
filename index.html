@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perfect Dream Modular | Modular Homes, Hotels & Commercial Buildings</title>
+  <title>Perfect Dream Modular | Exclusive U.S. Distributor</title>
+<link rel="canonical" href="https://perfectdreammodular.com/">
   <meta name="description" content="Perfect Dream Modular provides modular homes, container buildings, hotels, ADUs, offices, retail units, restaurants, pools, restrooms, and custom prefab structures through United Painters Worldwide." />
 
   <style>
@@ -492,7 +493,7 @@
         </a>
 
         <nav class="nav-links">
-          <a href="#products">Products</a><a href="#models">Mirror Houses</a><a href="#europe">Future Expansion</a>
+          <a href="#products">Products</a><a href="#models">Mirror Houses</a><a href="#contact">Request a Quote</a>
           <a href="#why">Why Modular</a>
           <a href="#process">Process</a>
           <a href="#contact" class="nav-cta">Request Pricing</a>
@@ -822,7 +823,7 @@
       event.preventDefault();
       const d = new FormData(event.currentTarget);
       const lines = ['Perfect Dream Modular project inquiry','',...Array.from(d.entries()).map(([k,v]) => k + ': ' + v)];
-      window.location.href = 'mailto:info@perfectdreammodular.com?subject=' + encodeURIComponent('Modular Project Inquiry — ' + d.get('country')) + '&body=' + encodeURIComponent(lines.join('\\n'));
+      window.location.href = 'mailto:info@perfectdreammodular.com?subject=' + encodeURIComponent('Modular Project Inquiry — ' + d.get('country')) + '&body=' + encodeURIComponent(lines.join('\n'));
     });
   </script>
 </body>
