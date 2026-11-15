@@ -462,6 +462,23 @@
         min-height: 360px;
       }
     }
+  
+    .specs { background:#e9e6dc; }
+    .spec-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .spec-card {background:#fff;border:1px solid var(--line);padding:30px;border-radius:24px}
+    .spec-card h3{font-size:1.55rem;margin-bottom:10px}
+    .spec-card dl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+    .spec-card dt{color:var(--muted)}.spec-card dd{font-weight:800;text-align:right}
+    .fineprint{font-size:.86rem;color:var(--muted);margin-top:20px}
+    .spec-card .price{font-size:1.9rem;font-weight:900;color:var(--dark)}
+    .spec-card .price small{font-size:.8rem;font-weight:500;color:var(--muted)}
+    .inquiry{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left;margin:28px auto;max-width:760px}
+    .inquiry label{display:grid;gap:6px;font-weight:700}
+    .inquiry input,.inquiry select,.inquiry textarea{width:100%;padding:13px 14px;border:1px solid #b9bdb6;border-radius:12px;font:inherit}
+    .inquiry .wide{grid-column:1/-1}
+    .inquiry button{cursor:pointer}
+    .inquiry-note{font-size:.85rem;opacity:.8}
+    @media(max-width:700px){.spec-grid,.inquiry{grid-template-columns:1fr}}
   </style>
 </head>
 
@@ -475,7 +492,7 @@
         </a>
 
         <nav class="nav-links">
-          <a href="#products">Products</a>
+          <a href="#products">Products</a><a href="#models">Mirror Houses</a><a href="#europe">Europe</a>
           <a href="#why">Why Modular</a>
           <a href="#process">Process</a>
           <a href="#contact" class="nav-cta">Request Pricing</a>
@@ -488,7 +505,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Exclusive U.S. Distributor</span>
+          <span class="eyebrow">U.S. & European Project Inquiries</span>
           <h1>Modular buildings built for speed, scale, and opportunity.</h1>
           <p>
             Perfect Dream Modular delivers prefab homes, ADUs, hotels, commercial buildings, retail units, restaurants,
@@ -519,8 +536,8 @@
         <div class="hero-visual">
           <div class="hero-photo">
             <div>
-              <h3>Hero Project Image</h3>
-              <p>Replace this area with your best modular resort, home, or commercial render.</p>
+              <h3>Mirror Houses &amp; Modular Hospitality</h3>
+              <p>Explore factory-quoted 20-foot and 40-foot mirror-house configurations and customizable modular structures.</p>
             </div>
           </div>
         </div>
@@ -533,13 +550,13 @@
           <span class="eyebrow">Product Categories</span>
           <h2>One platform. Many modular possibilities.</h2>
           <p>
-            Use the placeholders below for photos, renderings, or AI mockups of each product type.
+            Explore supplier-documented product categories. Final configurations, local approvals and pricing are confirmed per project.
           </p>
         </div>
 
         <div class="product-grid">
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Modular Homes</div>
+            <div class="photo-placeholder">Explore · Modular Homes</div>
             <div class="product-body">
               <h3>Modular Homes</h3>
               <p>Modern prefab homes designed for faster deployment, flexible layouts, and scalable residential development.</p>
@@ -552,7 +569,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>ADUs</div>
+            <div class="photo-placeholder">Explore · ADUs</div>
             <div class="product-body">
               <h3>ADUs & Backyard Units</h3>
               <p>Accessory dwelling units for rental income, family housing, guest suites, and compact living solutions.</p>
@@ -565,7 +582,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Container Hotels</div>
+            <div class="photo-placeholder">Explore · Container Hotels</div>
             <div class="product-body">
               <h3>Container Hotels</h3>
               <p>Modular hospitality units for resorts, glamping destinations, workforce housing, and boutique hotel concepts.</p>
@@ -578,7 +595,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Offices</div>
+            <div class="photo-placeholder">Explore · Offices</div>
             <div class="product-body">
               <h3>Offices & Workspaces</h3>
               <p>Clean, professional office modules for job sites, campuses, remote operations, and expanding businesses.</p>
@@ -591,7 +608,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Retail Shops</div>
+            <div class="photo-placeholder">Explore · Retail Shops</div>
             <div class="product-body">
               <h3>Retail & Pop-Up Shops</h3>
               <p>Container storefronts for vendors, retail brands, outdoor markets, events, and high-traffic sales locations.</p>
@@ -604,7 +621,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Restaurants</div>
+            <div class="photo-placeholder">Explore · Restaurants</div>
             <div class="product-body">
               <h3>Restaurants, Cafes & Bars</h3>
               <p>Food and beverage modules built for restaurants, coffee shops, bars, food courts, and entertainment venues.</p>
@@ -617,7 +634,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Restrooms</div>
+            <div class="photo-placeholder">Explore · Restrooms</div>
             <div class="product-body">
               <h3>Restroom Buildings</h3>
               <p>Durable restroom modules for parks, events, construction sites, resorts, campgrounds, and public facilities.</p>
@@ -630,7 +647,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Pools</div>
+            <div class="photo-placeholder">Explore · Pools</div>
             <div class="product-body">
               <h3>Container Pools</h3>
               <p>Modern container-based swimming pools for homes, hotels, resorts, outdoor venues, and luxury developments.</p>
@@ -643,7 +660,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Photo Placeholder<br>Landmarks</div>
+            <div class="photo-placeholder">Explore · Landmarks</div>
             <div class="product-body">
               <h3>Landmarks & Custom Builds</h3>
               <p>Statement structures, branded attractions, monuments, sales centers, and one-of-a-kind modular concepts.</p>
@@ -658,14 +675,52 @@
       </div>
     </section>
 
+
+    <section id="models" class="specs">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Supplier Documentation · October 2026</span>
+          <h2>Mirror-house models, with real specifications.</h2>
+          <p>Two detailed quotations were provided by Guangzhou Perfect Dream Modular House Co., Ltd. These are indicative historical factory quotations, not live retail offers.</p>
+        </div>
+        <div class="spec-grid">
+          <article class="spec-card">
+            <h3>20-foot Sky Mirror House</h3>
+            <p>Compact hospitality unit with insulated steel structure, reflective glazing, bathroom, kitchenette and furnishings.</p>
+            <dl><dt>External dimensions</dt><dd>5.85 × 2.25 × 2.50 m</dd><dt>Wall insulation</dt><dd>60 mm polyurethane</dd><dt>Roof insulation</dt><dd>80 mm polyurethane</dd><dt>Quoted configuration</dt><dd>Bathroom + kitchen + furniture</dd></dl>
+            <div class="price">$15,800 <small>USD · historical EXW quotation</small></div>
+            <p class="fineprint">Supplier quotation dated October 27, 2026; 30-day validity stated. Subject to reconfirmation, customization and local compliance.</p>
+          </article>
+          <article class="spec-card">
+            <h3>40-foot Sky Mirror House</h3>
+            <p>Extended mirror-house layout with insulated steel frame, bathroom, kitchen, furnishings and utility connections.</p>
+            <dl><dt>External dimensions</dt><dd>11.80 × 2.25 × 2.50 m</dd><dt>Wall insulation</dt><dd>80 mm polyurethane</dd><dt>Roof insulation</dt><dd>100 mm polyurethane</dd><dt>Quoted configuration</dt><dd>Bathroom + kitchen + furniture</dd></dl>
+            <div class="price">$26,500 <small>USD · historical EXW quotation</small></div>
+            <p class="fineprint">Supplier quotation dated October 27, 2026; 30-day validity stated. Shipping, duties, foundation, installation and site utilities are excluded unless separately agreed.</p>
+          </article>
+        </div>
+        <p class="fineprint">EXW means ex works: factory price only. The supplier has discussed approximately 30 days for manufacturing and approximately 60 days including shipping as preliminary estimates, not guaranteed delivery dates. Supplier technical drawings and CE documentation require project-specific professional review; CE paperwork alone does not establish building-code approval in any country.</p>
+      </div>
+    </section>
+    <section id="europe">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">European Housing & Hospitality</span><h2>Explore a pilot before scaling.</h2><p>We are exploring modular housing, hospitality and site infrastructure opportunities across Europe, including potential 10–20-unit pilots. Regional distribution rights, financing, site approvals and any development agreements remain subject to negotiation.</p></div>
+        <div class="process-grid">
+          <div class="step"><div class="step-number">01</div><h3>Site feasibility</h3><p>Confirm land use, foundation, access, utilities, local planning and building requirements.</p></div>
+          <div class="step"><div class="step-number">02</div><h3>Technical review</h3><p>Review structural, fire, energy, electrical, plumbing and product documentation with qualified local professionals.</p></div>
+          <div class="step"><div class="step-number">03</div><h3>Landed quotation</h3><p>Obtain freight, insurance, customs, taxes, crane, installation and commissioning estimates.</p></div>
+          <div class="step"><div class="step-number">04</div><h3>Pilot deployment</h3><p>Validate a small project before negotiating larger volume commitments or territorial rights.</p></div>
+        </div>
+      </div>
+    </section>
     <section id="why">
       <div class="container">
         <div class="split">
           <div>
             <span class="eyebrow">Why Perfect Dream Modular</span>
-            <h2>Built faster than traditional construction.</h2>
+            <h2>Factory production, tailored to your project.</h2>
             <p>
-              Modular construction gives developers, property owners, investors, and operators a smarter path to launch.
+              Modular construction offers developers, property owners and operators a flexible route from design to deployment.
               Units can be designed for housing, hospitality, commercial use, or custom destination concepts.
             </p>
             <a href="#contact" class="btn gold">Start a Project</a>
@@ -725,7 +780,7 @@
           <div class="step">
             <div class="step-number">4</div>
             <h3>Quote & Coordinate</h3>
-            <p>We help coordinate pricing, production details, import planning, and next steps for your project.</p>
+            <p>We coordinate indicative factory quotations, production details, shipping options and local permitting questions before any order.</p>
           </div>
         </div>
       </div>
@@ -751,8 +806,16 @@
   <footer>
     <div class="container footer-inner">
       <div>© 2026 Perfect Dream Modular. All rights reserved.</div>
-      <div>Exclusive U.S. Distributor: United Painters Worldwide</div>
+      <div>U.S. & European Project Inquiries: United Painters Worldwide</div>
     </div>
   </footer>
+<script>
+    document.getElementById('project-inquiry').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const d = new FormData(event.currentTarget);
+      const lines = ['Perfect Dream Modular project inquiry','',...Array.from(d.entries()).map(([k,v]) => k + ': ' + v)];
+      window.location.href = 'mailto:info@perfectdreammodular.com?subject=' + encodeURIComponent('Modular Project Inquiry — ' + d.get('country')) + '&body=' + encodeURIComponent(lines.join('\\n'));
+    });
+  </script>
 </body>
 </html>
