@@ -496,7 +496,7 @@
         </a>
 
         <nav class="nav-links">
-          <a href="#products">Products</a><a href="#models">Mirror Houses</a><a href="#contact">Request a Quote</a>
+          <a href="products.html">Products</a><a href="gallery.html">Gallery</a><a href="distribution.html">Distribution</a><a href="#models">Mirror Houses</a><a href="#contact">Request a Quote</a>
           <a href="#why">Why Modular</a>
           <a href="#process">Process</a>
           <a href="#contact" class="nav-cta">Request Pricing</a>
@@ -799,7 +799,7 @@
             Tell us what you want to build, where it will be located, and which product type you are interested in.
             We will help you identify the right modular solution.
           </p>
-<form id="project-inquiry" class="inquiry">
+<form id="project-inquiry" class="inquiry" action="https://formsubmit.co/unitedpaintersww@gmail.com" method="POST"><input type="hidden" name="_subject" value="Perfect Dream Modular — Homepage Project Inquiry"><input type="hidden" name="_next" value="https://perfectdreammodular.com/thank-you.html"><input type="hidden" name="_url" value="https://perfectdreammodular.com/contact.html"><input type="text" name="_honey" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label>Name<input name="name" required maxlength="100" autocomplete="name"></label>
 <label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
 <label>U.S. state / project location<input name="country" required maxlength="100" placeholder="State, city"></label>
@@ -807,8 +807,8 @@
 <label>Estimated units<input name="units" type="number" min="1" max="10000" value="1"></label>
 <label>Project stage<select name="stage"><option>Exploring options</option><option>Land secured</option><option>Permits in progress</option><option>Ready for quotation</option></select></label>
 <label class="wide">Details<textarea name="details" rows="4" maxlength="2000" placeholder="Location, intended use, timeframe, budget and special requirements"></textarea></label>
-<button class="btn light wide" type="submit">Prepare Email Inquiry</button>
-<p class="wide inquiry-note">Your email app will open with these details. This form does not transmit or store data on our website.</p>
+<button class="btn light wide" type="submit">Send Quote Request</button>
+<p class="wide inquiry-note">Your inquiry will be delivered to our distribution inbox by our form service. No purchase commitment.</p>
 </form>
         </div>
       </div>
@@ -820,14 +820,7 @@
       <div>© 2026 Perfect Dream Modular. All rights reserved.</div>
       <div>Exclusive U.S. Distributor: United Painters Worldwide</div>
     </div>
-  </footer>
-<script>
-    document.getElementById('project-inquiry').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const d = new FormData(event.currentTarget);
-      const lines = ['Perfect Dream Modular project inquiry','',...Array.from(d.entries()).map(([k,v]) => k + ': ' + v)];
-      window.location.href = 'mailto:Matt@UnitedPaintersWW.com?subject=' + encodeURIComponent('Modular Project Inquiry — ' + d.get('country')) + '&body=' + encodeURIComponent(lines.join('\n'));
-    });
-  </script>
+  <div style="text-align:center;padding:12px;color:#536054;font-size:13px"><a href="privacy.html">Privacy Notice</a> · <a href="contact.html">Contact</a></div></footer>
+
 </body>
 </html>
