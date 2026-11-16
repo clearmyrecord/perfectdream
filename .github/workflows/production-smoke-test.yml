@@ -1,0 +1,38 @@
+name: Production live website smoke test
+on:
+  push:
+    paths:
+      - '.github/workflows/production-smoke-test.yml'
+  workflow_dispatch:
+jobs:
+  verify-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify HTTPS, published pages, photos and lead forms
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://perfectdreammodular.com"
+          for attempt in $(seq 1 15); do
+            echo "Production check $attempt"
+            if curl -fsSL --retry 2 --max-time 25 "$BASE/contact.html?qa=$attempt" -o /tmp/contact.html &&
+               curl -fsSL --retry 2 --max-time 25 "$BASE/gallery.html?qa=$attempt" -o /tmp/gallery.html &&
+               curl -fsSL --retry 2 --max-time 25 "$BASE/distribution.html?qa=$attempt" -o /tmp/distribution.html &&
+               curl -fsSL --retry 2 --max-time 25 "$BASE/?qa=$attempt" -o /tmp/home.html &&
+               curl -fsSL --retry 2 --max-time 25 "$BASE/assets/photos/mirror-house.jpg?qa=$attempt" -o /tmp/hero.jpg &&
+               curl -fsSL --retry 2 --max-time 25 "$BASE/privacy.html?qa=$attempt" -o /tmp/privacy.html &&
+               grep -q 'name="_email" value="unitedpaintersww@gmail.com"' /tmp/contact.html &&
+               grep -q 'formsend.co/functions/handleSubmission' /tmp/contact.html &&
+               grep -q 'assets/photos/mirror-house.jpg' /tmp/gallery.html &&
+               grep -q 'European Development' /tmp/distribution.html &&
+               grep -q 'assets/photos/mirror-house.jpg' /tmp/home.html &&
+               grep -q 'Privacy Notice' /tmp/privacy.html &&
+               test "$(wc -c < /tmp/hero.jpg)" -gt 30000; then
+               echo 'PRODUCTION_SITE_LIVE_VERIFIED'
+               wc -c /tmp/home.html /tmp/contact.html /tmp/gallery.html /tmp/distribution.html /tmp/hero.jpg
+               exit 0
+            fi
+            sleep 20
+          done
+          echo 'FAILED: production site did not pass complete live check'
+          exit 1
