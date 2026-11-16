@@ -202,10 +202,8 @@
     .hero-photo {
       min-height: 520px;
       border-radius: 26px;
-      border: 1px dashed rgba(255, 255, 255, 0.35);
-      background:
-        linear-gradient(rgba(23, 33, 27, 0.28), rgba(23, 33, 27, 0.72)),
-        linear-gradient(135deg, #516151, #c49a4a);
+      border: 0;
+      background: linear-gradient(rgba(23,33,27,.12),rgba(23,33,27,.83)), url('https://19589575.s21i.faiusr.com/2/ABUIABACGAAgj7P27wUopa3DkAMwoAs4uAg.jpg') center center / cover no-repeat;
       display: flex;
       align-items: flex-end;
       padding: 28px;
@@ -480,7 +478,12 @@
     .inquiry button{cursor:pointer}
     .inquiry-note{font-size:.85rem;opacity:.8}
     @media(max-width:700px){.spec-grid,.inquiry{grid-template-columns:1fr}}
-  </style>
+  
+/* Genuine supplier examples, hosted by PD Modular until local image files are deployed. */
+.photo-real { min-height: 240px; padding: 0; position: relative; background: #d8d1bf; }
+.photo-real img { display: block; width: 100%; height: 240px; object-fit: cover; }
+.photo-real::after { content: 'Manufacturer example'; position:absolute; bottom:10px; left:12px; background:rgba(10,19,15,.72); color:white; padding:4px 9px; border-radius:5px; font-size:11px; letter-spacing:.02em; }
+</style>
 </head>
 
 <body>
@@ -557,7 +560,7 @@
 
         <div class="product-grid">
           <article class="product-card">
-            <div class="photo-placeholder">Modular Homes</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAgh77y7wUozoreCzC-GjijEw.jpg" alt="PD Modular supplier example: Modular Homes"></div>
             <div class="product-body">
               <h3>Modular Homes</h3>
               <p>Modern prefab homes designed for faster deployment, flexible layouts, and scalable residential development.</p>
@@ -570,7 +573,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">ADUs</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAg99zeogYonde-6wUwoAY4oAY.jpg" alt="PD Modular supplier example: ADUs"></div>
             <div class="product-body">
               <h3>ADUs & Backyard Units</h3>
               <p>Accessory dwelling units for rental income, family housing, guest suites, and compact living solutions.</p>
@@ -583,7 +586,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Container Hotels</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAgyLmM6AUorYP9gwYwmCo4kBw!1000x1000.jpg" alt="PD Modular supplier example: Container Hotels"></div>
             <div class="product-body">
               <h3>Container Hotels</h3>
               <p>Modular hospitality units for resorts, glamping destinations, workforce housing, and boutique hotel concepts.</p>
@@ -596,7 +599,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Offices</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAgj7P27wUopa3DkAMwoAs4uAg.jpg" alt="PD Modular supplier example: Offices"></div>
             <div class="product-body">
               <h3>Offices & Workspaces</h3>
               <p>Clean, professional office modules for job sites, campuses, remote operations, and expanding businesses.</p>
@@ -609,7 +612,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Retail Shops</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAgrNLy7wUo_buIgAYw2hw4kRM.jpg" alt="PD Modular supplier example: Retail Shops"></div>
             <div class="product-body">
               <h3>Retail & Pop-Up Shops</h3>
               <p>Container storefronts for vendors, retail brands, outdoor markets, events, and high-traffic sales locations.</p>
@@ -622,7 +625,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Restaurants</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAglemK9QUo2vaqzQMwwBw4sBU!1000x1000.jpg" alt="PD Modular supplier example: Restaurants"></div>
             <div class="product-body">
               <h3>Restaurants, Cafes & Bars</h3>
               <p>Food and beverage modules built for restaurants, coffee shops, bars, food courts, and entertainment venues.</p>
@@ -635,7 +638,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Restrooms</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAgyq71uQYo9MmgkwQwiCc4ph0.jpg" alt="PD Modular supplier example: Restrooms"></div>
             <div class="product-body">
               <h3>Restroom Buildings</h3>
               <p>Durable restroom modules for parks, events, construction sites, resorts, campgrounds, and public facilities.</p>
@@ -648,7 +651,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Pools</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAgxOGB6AUogsapngUwgBA4gAw.jpg" alt="PD Modular supplier example: Pools"></div>
             <div class="product-body">
               <h3>Container Pools</h3>
               <p>Modern container-based swimming pools for homes, hotels, resorts, outdoor venues, and luxury developments.</p>
@@ -661,7 +664,7 @@
           </article>
 
           <article class="product-card">
-            <div class="photo-placeholder">Landmarks</div>
+            <div class="photo-placeholder photo-real"><img loading="lazy" decoding="async" src="https://19589575.s21i.faiusr.com/2/ABUIABACGAAglemK9QUo2vaqzQMwwBw4sBU!1000x1000.jpg" alt="PD Modular supplier example: Landmarks"></div>
             <div class="product-body">
               <h3>Landmarks & Custom Builds</h3>
               <p>Statement structures, branded attractions, monuments, sales centers, and one-of-a-kind modular concepts.</p>
@@ -823,7 +826,7 @@
       event.preventDefault();
       const d = new FormData(event.currentTarget);
       const lines = ['Perfect Dream Modular project inquiry','',...Array.from(d.entries()).map(([k,v]) => k + ': ' + v)];
-      window.location.href = 'mailto:info@perfectdreammodular.com?subject=' + encodeURIComponent('Modular Project Inquiry — ' + d.get('country')) + '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = 'mailto:Matt@UnitedPaintersWW.com?subject=' + encodeURIComponent('Modular Project Inquiry — ' + d.get('country')) + '&body=' + encodeURIComponent(lines.join('\n'));
     });
   </script>
 </body>
