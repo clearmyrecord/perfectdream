@@ -1,4 +1,4 @@
-name: Verify Perfect Dream Modular quote form setup
+name: Verify live modular inquiry delivery
 on:
   push:
     paths:
@@ -8,7 +8,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger first-use form activation email
+      - name: Send controlled form submission
         run: |
-          curl --silent --show-error --location --fail-with-body --max-time 45             -H 'Referer: https://perfectdreammodular.com/contact.html'             --data-urlencode 'name=Perfect Dream Modular - LAUNCH CHECK'             --data-urlencode 'email=unitedpaintersww@gmail.com'             --data-urlencode 'message=One-time test of contact form setup. Not a customer lead.'             --data-urlencode '_url=https://perfectdreammodular.com/contact.html'             --data-urlencode '_subject=PDM contact form activation test'             --data-urlencode '_captcha=false'             'https://formsubmit.co/unitedpaintersww@gmail.com' > /tmp/pdm-activation.html
-          echo 'Provider response received; verification email may be required.'
+          curl --silent --show-error --fail-with-body --max-time 45             -H 'Referer: https://perfectdreammodular.com/contact.html'             --data-urlencode 'name=Perfect Dream Modular launch test'             --data-urlencode 'email=unitedpaintersww@gmail.com'             --data-urlencode 'message=ONE-TIME FORM DELIVERY CHECK - NOT A CUSTOMER LEAD'             --data-urlencode '_email=unitedpaintersww@gmail.com'             --data-urlencode '_subject=Perfect Dream Modular test submission'             'https://formsend.co/functions/handleSubmission'
