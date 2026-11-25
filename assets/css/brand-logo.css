@@ -7,3 +7,5 @@
 header nav .pdm-brand-lockup{align-self:center}
 @media(max-width:640px){.pdm-brand-lockup{padding:4px;max-width:calc(100vw - 100px)}.pdm-brand-lockup img{width:min(245px,65vw)}.footer-brand.pdm-brand-lockup,.pdm-footer-logo{max-width:100%}.site-header .nav,.site-header .nav-wrap{gap:8px}}
 @media(min-width:1371px) and (max-width:1550px){.site-header .nav:has(.mobile-nav) .nav-links{display:none}.site-header .nav:has(.mobile-nav) .mobile-nav{display:block}.site-header .mobile-nav summary{cursor:pointer;padding:10px 14px;border:1px solid var(--line);list-style:none}.site-header .mobile-nav nav{position:absolute;right:18px;top:82px;background:#f7f5ef;border:1px solid var(--line);padding:16px;display:grid;gap:16px;box-shadow:var(--shadow)}}
+/* Let the transparent SVG inherit the actual header surface on every page. */
+header .pdm-brand-lockup{background:transparent!important;border-radius:0}
