@@ -12,6 +12,7 @@ cityResidential:'https://files.lasvegasnevada.gov/building-safety/Forms/Resident
 cityCommercial:'https://files.lasvegasnevada.gov/building-safety/Forms/Commercial/Commercial-Building-Application.pdf',
 county:'https://www.clarkcountynv.gov/assets/documents/government/departments/building___fire_prevention/plan_submittal/application-forms/building-permit-application-form-bpa-002-11-27-2023.pdf'};
 const manifest={version:'5.0-preview',forms:{}};
+const pinned={cityResidential:'d631e15f280756da356cf1be44314506edc1fe65878c5c4ab854629f21872e3a',cityCommercial:'3e1197c59d00635f38f14a0ab55558f751fec5bdb513c0c6604305a21cf85d48',county:'36680891756e6f05539849cc670dceba9dcf11f89fa2db7986b64fc1fe25c91f'};
 for(const [id,url] of Object.entries(sources)){try{
 const response=await fetch(url,{signal:AbortSignal.timeout(25000),redirect:'follow'});
 if(!response.ok||!['files.lasvegasnevada.gov','www.clarkcountynv.gov'].includes(new URL(response.url).hostname))throw Error('Source unavailable');
@@ -20,6 +21,7 @@ if(bytes.length>8*1024*1024||bytes.subarray(0,5).toString()!=='%PDF-')throw Erro
 const doc=await PDFDocument.load(bytes);const page=doc.getPages()[0];const {width,height}=page.getSize();
 if(doc.getPageCount()!==1||Math.abs(width/height-1088/1408)>.012||page.getRotation().angle!==0)throw Error('Unexpected form geometry');
 const sha256=createHash('sha256').update(bytes).digest('hex');
+if(sha256!==pinned[id])throw Error('Official template revision changed; mapping re-review required');
 const sample=await map.generate(lib,bytes,id,{project:'SYNTHETIC QA SAMPLE',address:'TEST SITE - NOT A REAL ADDRESS',category:id==='cityCommercial'?'commercial':'residential',buildings:'1',scope:'Example modular building',valuation:'123456',occupancy:'TEST',construction:'TEST',area:'320',units:'1',stories:'1',buildingUse:'Example only',contractor:'SAMPLE CONTRACTOR',applicant:'TEST APPLICANT',owner:'TEST OWNER',parcel:'000-00-000-000',sewer:'sewer'});const check=await PDFDocument.load(sample.bytes);if(check.getPageCount()!==1||sample.filled.length<8)throw Error('Synthetic mapping check failed');await writeFile(dir+'/'+id+'.pdf',bytes);await writeFile(dir+'/qa-'+id+'.pdf',sample.bytes);manifest.forms[id]={url,sha256,width,height,available:true,sample:true,qaFields:sample.filled.length};console.log('FORM QA '+id+' mapped '+sample.filled.length+' fields; render inspection still required');console.log('FORM '+id+' '+sha256+' '+width+'x'+height);
 }catch(e){manifest.forms[id]={url,available:false};console.log('FORM UNAVAILABLE '+id+' '+String(e.message).slice(0,150))}}
 const browserLib=require.resolve('pdf-lib/dist/pdf-lib.min.js');await copyFile(browserLib,dir+'/pdf-lib.min.js');
