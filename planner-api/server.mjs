@@ -31,9 +31,9 @@ const today=new Date().toISOString().slice(0,10);if(day!==today){day=today;used=
 if(busy||used>=dailyMax)return respond(res,429,{error:'Pilot research limit reached'});
 busy=true;used++;
 try{const response=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:'Bearer '+key,'Content-Type':'application/json'},body:JSON.stringify({model,instructions,input:JSON.stringify(project),tools:[{type:'web_search'}],tool_choice:'required',max_output_tokens:4000,max_tool_calls:4,store:false}),signal:AbortSignal.timeout(90000)});
-if(!response.ok)return respond(res,502,{error:'AI provider unavailable'});
-const data=await response.json(),result=extract(data);if(!result.text||!result.sources.length)return respond(res,502,{error:'No source-backed research returned'});
-return respond(res,200,result)
+if(!response.ok){console.warn('[planner] AI provider HTTP '+response.status);return respond(res,502,{error:'AI provider unavailable'})}
+const data=await response.json(),result=extract(data);if(!result.text||!result.sources.length){console.warn('[planner] AI response missing text or sources');return respond(res,502,{error:'No source-backed research returned'})}
+console.info('[planner] research succeeded, cited sources: '+result.sources.length);return respond(res,200,result)
 }catch{return respond(res,502,{error:'AI research unavailable'})}finally{busy=false}
 });
-server.requestTimeout=15000;server.headersTimeout=10000;server.listen(port,'0.0.0.0');
+server.requestTimeout=15000;server.headersTimeout=10000;server.listen(port,'0.0.0.0',()=>console.info('[planner] startup configuration: '+JSON.stringify({apiKeyPresent:Boolean(key.trim()),accessTokenValid:token.length>=32,aiConfigured:ready()})));
