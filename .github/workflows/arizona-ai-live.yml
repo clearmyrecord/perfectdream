@@ -1,0 +1,16 @@
+name: Arizona public AI end-to-end test
+on:
+  push:
+    paths:
+      - '.github/workflows/arizona-ai-live.yml'
+  workflow_dispatch:
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/arizona-ai-live.cjs
