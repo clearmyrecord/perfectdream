@@ -491,6 +491,7 @@
 .hero-photo{min-height:0;aspect-ratio:1800/889;padding:26px;background:linear-gradient(to top,rgba(15,24,20,.82),rgba(15,24,20,.08) 48%,transparent 75%),url('assets/photos/mirror-house-sunset-hero.svg') 44% center / cover no-repeat}.hero-photo h3{font-size:clamp(1.35rem,2.1vw,2rem)}.hero-photo p{font-size:.92rem}@media(max-width:640px){.hero-photo{aspect-ratio:3/2;min-height:0;padding:18px}.hero-photo h3{font-size:1.35rem}.hero-photo p{font-size:.82rem}}
 /* Full-bleed signature feature: the original panorama is the first visual, not a cropped side card. */
 .hero.hero-focal{padding:0;background:#f7f5ef}.hero-focal .focal-feature{margin:0;width:100%;background:#17201d}.hero-focal .focal-image{display:block;width:100%;max-width:none;height:auto;aspect-ratio:1800/889;object-fit:contain;border-radius:0}.hero-focal .focal-caption{background:#17201d;color:#fff;padding:27px 0 30px}.hero-focal .focal-caption-inner{display:flex;justify-content:space-between;align-items:center;gap:32px}.hero-focal .focal-kicker{display:block;color:#e5cc9a;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}.hero-focal .focal-caption h2{font-family:Georgia,serif;font-size:clamp(1.8rem,3.1vw,3.25rem);font-weight:400;color:#fff;margin:0 0 10px;line-height:1.08}.hero-focal .focal-caption p{color:#e1e4df;font-size:1rem;max-width:740px;margin:0}.hero-focal .focal-caption .btn{flex-shrink:0}.hero-focal .focal-intro{padding:56px 0 64px}.hero-focal .focal-intro-copy{max-width:1000px}.hero-focal .focal-intro h1{font-size:clamp(2.9rem,5.5vw,5.6rem);max-width:1000px}.hero-focal .focal-intro p{max-width:850px}.hero-focal .trust-row{max-width:780px}@media(max-width:720px){.hero-focal .focal-caption{padding:20px 0 24px}.hero-focal .focal-caption-inner{flex-direction:column;align-items:flex-start;gap:18px}.hero-focal .focal-caption p{font-size:.9rem}.hero-focal .focal-intro{padding:36px 0 44px}.hero-focal .focal-intro h1{font-size:clamp(2.5rem,9vw,3.5rem)}.hero-focal .focal-intro p{font-size:1rem}.hero-focal .focal-caption h2{font-size:1.85rem}}
+.planning-feature{padding:68px 0;background:#eeeae0}.planning-shell{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;background:#17201d;color:#fff;padding:clamp(24px,5vw,58px);border-radius:5px;align-items:center}.planning-shell h2{font-size:clamp(2.4rem,4vw,4.2rem);color:#fff}.planning-shell .eyebrow{color:#e5cc9a}.planning-shell p{color:#d6dbd5;margin:16px 0 24px}.planning-shell .planning-note{font-size:.78rem;color:#d6dbd5;margin:14px 0 0}.planning-steps article{display:flex;gap:18px;border-top:1px solid #526056;padding:20px 0}.planning-steps article:last-child{border-bottom:1px solid #526056}.planning-steps article>span{font:400 1.4rem Georgia,serif;color:#e5cc9a}.planning-steps h3{font-weight:600;font-size:1.1rem;color:#fff}.planning-steps p{font-size:.88rem;margin:4px 0 0}.nav-links a.planning-nav{color:#735528;font-weight:800}@media(max-width:800px){.planning-shell{grid-template-columns:1fr;gap:20px}.planning-feature{padding:44px 0}}@media(max-width:1370px){.nav-links{display:none}.mobile-nav{display:block}.mobile-nav nav{max-height:calc(100dvh - 95px);overflow-y:auto}}
 </style>
 </head>
 
@@ -504,10 +505,10 @@
         </a>
 
         <nav class="nav-links">
-          <a href="products.html">Products</a><a href="gallery.html">Gallery</a><a href="#one-bedroom-apartment">Apartments</a><a href="#mini-hotels">Mini Hotels</a><a href="#commercial-spaces">Commercial</a><a href="distribution.html">Distribution</a><a href="#models">Mirror Houses</a><a href="#retail-pricing">Pricing</a>
+          <a href="products.html">Products</a><a href="gallery.html">Gallery</a><a href="#one-bedroom-apartment">Apartments</a><a href="#mini-hotels">Mini Hotels</a><a href="#commercial-spaces">Commercial</a><a href="distribution.html">Distribution</a><a href="#models">Mirror Houses</a><a href="#retail-pricing">Pricing</a><a class="planning-nav" href="planning.html">AI Planning</a>
           <a href="#process">Process</a>
           <a href="#contact" class="nav-cta">Project Inquiry</a>
-        </nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="products.html">Products</a><a href="gallery.html">Gallery</a><a href="#one-bedroom-apartment">Apartments</a><a href="#mini-hotels">Mini Hotels</a><a href="#commercial-spaces">Commercial</a><a href="distribution.html">Distribution</a><a href="#models">Mirror Houses</a><a href="#retail-pricing">Pricing</a><a href="#contact">Project Inquiry</a></nav></details>
+        </nav><details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="products.html">Products</a><a href="gallery.html">Gallery</a><a href="#one-bedroom-apartment">Apartments</a><a href="#mini-hotels">Mini Hotels</a><a href="#commercial-spaces">Commercial</a><a href="distribution.html">Distribution</a><a href="#models">Mirror Houses</a><a href="#retail-pricing">Pricing</a><a class="planning-nav" href="planning.html">AI Planning</a><a href="#contact">Project Inquiry</a></nav></details>
       </div>
     </div>
   </header>
@@ -532,7 +533,7 @@
 
           <div class="hero-actions">
             <a href="#products" class="btn gold">Explore the collection</a>
-            <a href="#contact" class="btn">Request Quote</a>
+            <a href="#contact" class="btn">Request Quote</a><a href="planning.html" class="btn">Plan your project</a>
           </div>
 
           <div class="trust-row">
@@ -552,7 +553,8 @@
         </div></div>
 </section>
 
-    <section id="products">
+    <section id="project-planning" class="planning-feature"><div class="container"><div class="planning-shell"><div><span class="eyebrow">Project development · AI-assisted planning</span><h2>Know what it takes to build.</h2><p>Explore zoning, local permitting, site requirements and factory documentation before you commit to a modular project. Start with a preliminary checklist and a personalized brief for AI research using official sources.</p><a class="btn gold" href="planning.html">Start project planning <span aria-hidden="true">→</span></a><p class="planning-note">U.S. projects · Preliminary guidance, not a zoning or permit approval. AI research continues in ChatGPT.</p></div><div class="planning-steps"><article><span>01</span><div><h3>Identify the location</h3><p>City, county, state and intended use.</p></div></article><article><span>02</span><div><h3>Prepare the checklist</h3><p>Zoning, permits, engineering and site readiness.</p></div></article><article><span>03</span><div><h3>Research with AI</h3><p>Get a tailored research brief for current official rules.</p></div></article></div></div></div></section>
+<section id="products">
       <div class="container">
         <div class="section-head center">
           <span class="eyebrow">Product Categories</span>
