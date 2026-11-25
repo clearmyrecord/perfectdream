@@ -2,6 +2,12 @@
 (function(root){
 'use strict';
 const sources={
+phoenix:{title:'Phoenix SHAPE PHX permit portal',url:'https://shapephx.phoenix.gov/s/'},
+tucson:{title:'Tucson Development Center permit guidance',url:'https://www.tucsonaz.gov/Departments/Planning-Development-Services/Permits'},
+maricopa:{title:'Maricopa County planning services',url:'https://www.maricopa.gov/2066/Planning-Services'},
+pima:{title:'Pima County development services',url:'https://www.pima.gov/development-services'},
+azFactory:{title:'Arizona factory-built building program',url:'https://housing.az.gov/programs/office-of-manufactured-housing/factory-built-buildings'},
+azInstall:{title:'Arizona installation permits',url:'https://housing.az.gov/programs/office-of-manufactured-housing/installation-permits'},
 cityResidential:{title:'City of Las Vegas residential building application — official forms directory',url:'https://www.lasvegasnevada.gov/Business/Planning-Zoning/Building-Safety/Building-Safety-Resources'},
 cityCommercial:{title:'City of Las Vegas commercial building application — official forms directory',url:'https://www.lasvegasnevada.gov/Business/Planning-Zoning/Building-Safety/Building-Safety-Resources'},
 citySubmit:{title:'City of Las Vegas permit instructions',url:'https://www.lasvegasnevada.gov/Business/Permits-Licenses/Building-Permits/New-Permits'},
@@ -14,10 +20,10 @@ const required=['project','address','scope','valuation','occupancy','constructio
 function clean(v){return typeof v==='string'?v.trim():''}
 function prepare(raw,docStates={},attachments=[],prior={}){
 const d={};for(const [k] of fields)d[k]=clean(raw[k]);d.jurisdiction=clean(raw.jurisdiction);d.category=clean(raw.category);
-const supported=['city','county'].includes(d.jurisdiction)&&['residential','commercial'].includes(d.category);
-const refs=!supported?[]:d.jurisdiction==='city'?[d.category==='commercial'?'cityCommercial':'cityResidential','citySubmit']:['countyApplication','countySubmit'];
+const az=['phoenix','tucson','maricopa','pima'].includes(d.jurisdiction);const supported=['city','county','phoenix','tucson','maricopa','pima'].includes(d.jurisdiction)&&['residential','commercial'].includes(d.category);
+const refs=!supported?[]:az?[d.jurisdiction,'azFactory','azInstall']:d.jurisdiction==='city'?[d.category==='commercial'?'cityCommercial':'cityResidential','citySubmit']:['countyApplication','countySubmit'];
 const missing=required.filter(k=>!d[k]);if(d.jurisdiction==='county')for(const k of ['parcel','owner','ownerEmail','phone','mailing','sewer'])if(!d[k])missing.push(k);
-const issues=[];if(!supported)issues.push('Confirm jurisdiction and application classification before selecting official forms.');
+const issues=[];if(az)issues.push('Arizona official PDF mapping is not available; use the current official portal and confirm state factory approval, certificates and installation permit responsibility before shipment.');if(!supported)issues.push('Confirm jurisdiction and application classification before selecting official forms.');
 for(const k of ['area','buildings','units','stories'])if(d[k]&&(!Number.isFinite(Number(d[k]))||Number(d[k])<=0||(['buildings','units','stories'].includes(k)&&!Number.isInteger(Number(d[k])))))issues.push('Correct '+fields.find(x=>x[0]===k)[1]+'.');
 if(d.valuation&&(!Number.isFinite(Number(d.valuation))||Number(d.valuation)<0))issues.push('Correct estimated project valuation.');
 if(d.category==='commercial'&&!d.license)issues.push('Confirm licensed contractor requirements; do not infer a license.');
