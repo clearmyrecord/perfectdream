@@ -492,7 +492,7 @@
 /* Full-bleed signature feature: the original panorama is the first visual, not a cropped side card. */
 .hero.hero-focal{padding:0;background:#f7f5ef}.hero-focal .focal-feature{margin:0;width:100%;background:#17201d}.hero-focal .focal-image{display:block;width:100%;max-width:none;height:auto;aspect-ratio:1800/889;object-fit:contain;border-radius:0}.hero-focal .focal-caption{background:#17201d;color:#fff;padding:27px 0 30px}.hero-focal .focal-caption-inner{display:flex;justify-content:space-between;align-items:center;gap:32px}.hero-focal .focal-kicker{display:block;color:#e5cc9a;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}.hero-focal .focal-caption h2{font-family:Georgia,serif;font-size:clamp(1.8rem,3.1vw,3.25rem);font-weight:400;color:#fff;margin:0 0 10px;line-height:1.08}.hero-focal .focal-caption p{color:#e1e4df;font-size:1rem;max-width:740px;margin:0}.hero-focal .focal-caption .btn{flex-shrink:0}.hero-focal .focal-intro{padding:56px 0 64px}.hero-focal .focal-intro-copy{max-width:1000px}.hero-focal .focal-intro h1{font-size:clamp(2.9rem,5.5vw,5.6rem);max-width:1000px}.hero-focal .focal-intro p{max-width:850px}.hero-focal .trust-row{max-width:780px}@media(max-width:720px){.hero-focal .focal-caption{padding:20px 0 24px}.hero-focal .focal-caption-inner{flex-direction:column;align-items:flex-start;gap:18px}.hero-focal .focal-caption p{font-size:.9rem}.hero-focal .focal-intro{padding:36px 0 44px}.hero-focal .focal-intro h1{font-size:clamp(2.5rem,9vw,3.5rem)}.hero-focal .focal-intro p{font-size:1rem}.hero-focal .focal-caption h2{font-size:1.85rem}}
 .planning-feature{padding:68px 0;background:#eeeae0}.planning-shell{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;background:#17201d;color:#fff;padding:clamp(24px,5vw,58px);border-radius:5px;align-items:center}.planning-shell h2{font-size:clamp(2.4rem,4vw,4.2rem);color:#fff}.planning-shell .eyebrow{color:#e5cc9a}.planning-shell p{color:#d6dbd5;margin:16px 0 24px}.planning-shell .planning-note{font-size:.78rem;color:#d6dbd5;margin:14px 0 0}.planning-steps article{display:flex;gap:18px;border-top:1px solid #526056;padding:20px 0}.planning-steps article:last-child{border-bottom:1px solid #526056}.planning-steps article>span{font:400 1.4rem Georgia,serif;color:#e5cc9a}.planning-steps h3{font-weight:600;font-size:1.1rem;color:#fff}.planning-steps p{font-size:.88rem;margin:4px 0 0}.nav-links a.planning-nav{color:#735528;font-weight:800}@media(max-width:800px){.planning-shell{grid-template-columns:1fr;gap:20px}.planning-feature{padding:44px 0}}@media(max-width:1370px){.nav-links{display:none}.mobile-nav{display:block}.mobile-nav nav{max-height:calc(100dvh - 95px);overflow-y:auto}}
-</style>
+.card-retail{display:flex;flex-direction:column;gap:4px;margin:16px 0 18px;padding:14px 0;border-top:1px solid var(--line,#dedbd2);border-bottom:1px solid var(--line,#dedbd2)}.card-retail span,.card-retail small{font:500 .76rem/1.4 system-ui;color:var(--muted,#586258)}.card-retail strong{font:500 1.65rem/1.2 Georgia,serif;color:var(--ink,#17201d)}.card-retail a{font:600 .78rem/1.5 system-ui;text-decoration:underline;text-underline-offset:3px}</style>
 <style id="development-tools-styles">.tools-intro{max-width:800px;margin-bottom:28px;color:#17201d}.tools-intro h2{color:#17201d;font-size:clamp(2.1rem,4.5vw,3.6rem);margin:10px 0 14px}.tools-intro p{color:#46564b}.tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.tools-grid article{display:flex;flex-direction:column;align-items:flex-start;background:#17201d;color:#f7f5ef;padding:clamp(20px,3vw,34px);border:1px solid #3e493f;border-radius:5px;min-height:240px}.tools-grid h3{font-family:Georgia,serif;font-size:1.55rem;font-weight:400;color:#fff;margin:10px 0}.tools-grid p{color:#d5dcd2;margin-bottom:18px}.tools-grid .btn{margin-top:auto}.tools-kicker{color:#d8bd86;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-weight:700}.tools-note{font-size:.85rem;color:#526057}.tools-grid .tools-note{margin-top:auto;color:#d8bd86}@media(max-width:650px){.tools-grid{grid-template-columns:1fr}.tools-grid article{min-height:0}.tools-grid .btn{width:100%}}</style></head>
 
 <body>
@@ -560,7 +560,7 @@
           <span class="eyebrow">Product Categories</span>
           <h2>A collection for every ambition.</h2>
           <p>
-            Explore supplier-documented product categories. Final configurations, local approvals and pricing are confirmed per project.
+            Explore supplier-documented product categories with starting retail prices in USD. Freight, duties, taxes, installation and local project expenses are separate; custom configurations require a quote.
           </p>
         </div>
 
@@ -570,7 +570,7 @@
             <div class="product-body">
               <h3>Modular Homes</h3>
               <p>Modern prefab homes designed for faster deployment, flexible layouts, and scalable residential development.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Starting retail · USD</span><strong>From $18,900</strong><small>20 ft Australia Apartment</small><a href="cost-calculator.html?model=20%20ft%20Australia%20Apartment">Estimate total project price</a></div><div class="tag-list">
                 <span class="tag">Residential</span>
                 <span class="tag">Prefab</span>
                 <span class="tag">Custom Layouts</span>
@@ -583,7 +583,7 @@
             <div class="product-body">
               <h3>ADUs & Backyard Units</h3>
               <p>Accessory dwelling units for rental income, family housing, guest suites, and compact living solutions.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Starting retail · USD</span><strong>From $18,900</strong><small>20 ft Australia Apartment</small><a href="cost-calculator.html?model=20%20ft%20Australia%20Apartment">Estimate total project price</a></div><div class="tag-list">
                 <span class="tag">ADU</span>
                 <span class="tag">Guest House</span>
                 <span class="tag">Rental Income</span>
@@ -596,7 +596,7 @@
             <div class="product-body">
               <h3>Container Hotels</h3><a href="#mini-hotels" style="display:inline-block;margin-bottom:10px;text-decoration:underline">Explore mini hotels</a>
               <p>Modular hospitality units for resorts, glamping destinations, workforce housing, and boutique hotel concepts.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Starting retail · USD</span><strong>From $21,900</strong><small>Dazonghu Container Hotel</small><a href="cost-calculator.html?model=Dazonghu%20Container%20Hotel">Estimate total project price</a></div><div class="tag-list">
                 <span class="tag">Hotels</span>
                 <span class="tag">Resorts</span>
                 <span class="tag">Hospitality</span>
@@ -609,7 +609,7 @@
             <div class="product-body">
               <h3>Offices & Workspaces</h3>
               <p>Clean, professional office modules for job sites, campuses, remote operations, and expanding businesses.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Custom configurations</span><strong>Price on request</strong><a href="#contact">Request a project quote</a></div><div class="tag-list">
                 <span class="tag">Office</span>
                 <span class="tag">Job Site</span>
                 <span class="tag">Business</span>
@@ -622,7 +622,7 @@
             <div class="product-body">
               <h3>Retail & Pop-Up Shops</h3><a href="#commercial-spaces" style="display:inline-block;margin-bottom:10px;text-decoration:underline">See commercial collection</a>
               <p>Container storefronts for vendors, retail brands, outdoor markets, events, and high-traffic sales locations.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Starting retail · USD</span><strong>From $18,900</strong><small>20 ft Mobile Kitchen / Shop / Bar</small><a href="cost-calculator.html?model=20%20ft%20Mobile%20Kitchen%20%2F%20Shop%20%2F%20Bar">Estimate total project price</a></div><div class="tag-list">
                 <span class="tag">Retail</span>
                 <span class="tag">Pop-Up</span>
                 <span class="tag">Events</span>
@@ -635,7 +635,7 @@
             <div class="product-body">
               <h3>Restaurants, Cafes & Bars</h3>
               <p>Food and beverage modules built for restaurants, coffee shops, bars, food courts, and entertainment venues.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Starting retail · USD</span><strong>From $18,900</strong><small>20 ft Mobile Kitchen / Shop / Bar</small><a href="cost-calculator.html?model=20%20ft%20Mobile%20Kitchen%20%2F%20Shop%20%2F%20Bar">Estimate total project price</a></div><div class="tag-list">
                 <span class="tag">Restaurant</span>
                 <span class="tag">Cafe</span>
                 <span class="tag">Bar</span>
@@ -648,7 +648,7 @@
             <div class="product-body">
               <h3>Restroom Buildings</h3>
               <p>Durable restroom modules for parks, events, construction sites, resorts, campgrounds, and public facilities.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Starting retail · USD</span><strong>From $14,900</strong><small>20 ft Container Restroom</small><a href="cost-calculator.html?model=20%20ft%20Container%20Restroom">Estimate total project price</a></div><div class="tag-list">
                 <span class="tag">Restrooms</span>
                 <span class="tag">Public Use</span>
                 <span class="tag">Facilities</span>
@@ -661,7 +661,7 @@
             <div class="product-body">
               <h3>Container Pools</h3>
               <p>Modern container-based swimming pools for homes, hotels, resorts, outdoor venues, and luxury developments.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Starting retail · USD</span><strong>From $24,900</strong><small>20 ft Container Pool</small><a href="cost-calculator.html?model=20%20ft%20Container%20Pool">Estimate total project price</a></div><div class="tag-list">
                 <span class="tag">Pools</span>
                 <span class="tag">Luxury</span>
                 <span class="tag">Outdoor Living</span>
@@ -674,7 +674,7 @@
             <div class="product-body">
               <h3>Landmarks & Custom Builds</h3>
               <p>Statement structures, branded attractions, monuments, sales centers, and one-of-a-kind modular concepts.</p>
-              <div class="tag-list">
+              <div class="card-retail"><span>Custom configurations</span><strong>Price on request</strong><a href="#contact">Request a project quote</a></div><div class="tag-list">
                 <span class="tag">Custom</span>
                 <span class="tag">Landmarks</span>
                 <span class="tag">Experiential</span>
@@ -701,21 +701,21 @@
             <h3>20-foot Sky Mirror House</h3>
             <p>Compact hospitality unit with insulated steel structure, reflective glazing, bathroom, kitchenette and furnishings.</p>
             <dl><dt>External dimensions</dt><dd>5.85 × 2.25 × 2.50 m</dd><dt>Wall insulation</dt><dd>60 mm polyurethane</dd><dt>Roof insulation</dt><dd>80 mm polyurethane</dd><dt>Quoted configuration</dt><dd>Bathroom + kitchen + furniture</dd></dl>
-            <div class="price">From $22,900 <small>USD · starting retail unit price</small></div>
+            <div class="price">From $24,900 <small>USD · starting retail unit price</small></div><a class="btn gold" href="cost-calculator.html?model=20%20ft%20Sky%20Mirror%20House">Estimate total project price</a>
             <p class="fineprint">Final configuration, availability and local compliance are confirmed in your written quotation.</p>
           </article>
           <article class="spec-card">
             <h3>40-foot Sky Mirror House</h3>
             <p>Extended mirror-house layout with insulated steel frame, bathroom, kitchen, furnishings and utility connections.</p>
             <dl><dt>External dimensions</dt><dd>11.80 × 2.25 × 2.50 m</dd><dt>Wall insulation</dt><dd>80 mm polyurethane</dd><dt>Roof insulation</dt><dd>100 mm polyurethane</dd><dt>Quoted configuration</dt><dd>Bathroom + kitchen + furniture</dd></dl>
-            <div class="price">From $37,900 <small>USD · starting retail unit price</small></div>
+            <div class="price">From $41,900 <small>USD · starting retail unit price</small></div><a class="btn gold" href="cost-calculator.html?model=40%20ft%20Sky%20Mirror%20House">Estimate total project price</a>
             <p class="fineprint">Shipping, duties, foundation, installation and site utilities are excluded unless separately agreed.</p>
           </article>
         </div>
         <p class="fineprint">Technical specifications are available on request. The supplier has discussed approximately 30 days for manufacturing and approximately 60 days including shipping as preliminary estimates, not guaranteed delivery dates. Supplier technical drawings and CE documentation require project-specific professional review; CE paperwork alone does not establish building-code approval in any country.</p>
       </div>
     </section>
-    <section id="retail-pricing"><div class="container"><div class="section-head"><span class="eyebrow">The collection · USD</span><h2>Exceptional design. Considered pricing.</h2><p>Explore starting U.S. retail prices for our modular collection, manufactured by Guangzhou Perfect Dream Modular House Co., Ltd. in Guangdong, China. Each project is quoted individually.</p></div><div class="cost-list"><div class="cost-row"><div><h3>20 ft Sky Mirror House</h3><span>Furnished configuration</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$22,900</strong></div><div class="cost-row"><div><h3>40 ft Sky Mirror House</h3><span>Furnished configuration</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$37,900</strong></div><div class="cost-row"><div><h3>Ocean Sky Mirror Hotel</h3><span>Ocean Sky configuration</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$20,900</strong></div><div class="cost-row"><div><h3>20 ft Australia Apartment</h3><span>Compact living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$16,900</strong></div><div class="cost-row"><div><h3>40 ft Australia Apartment</h3><span>Extended living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$27,900</strong></div><div class="cost-row"><div><h3>20 ft Pure Apple Cabin</h3><span>Compact cabin</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$17,900</strong></div><div class="cost-row"><div><h3>Dazonghu Container Hotel</h3><span>Hospitality</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$19,900</strong></div><div class="cost-row"><div><h3>Container Tent Hotel</h3><span>Glamping</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$21,900</strong></div><div class="cost-row"><div><h3>20 ft Slide-out Container</h3><span>Expandable living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$32,900</strong></div><div class="cost-row"><div><h3>Luxury Two-floor Hotel</h3><span>Multi-suite hospitality</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$99,900</strong></div><div class="cost-row"><div><h3>20 ft Container Pool</h3><span>Outdoor living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$24,900</strong></div><div class="cost-row"><div><h3>40 ft Container Pool</h3><span>Outdoor living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$34,900</strong></div><div class="cost-row"><div><h3>20 ft Mobile Kitchen / Shop / Bar</h3><span>Commercial</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$18,900</strong></div><div class="cost-row"><div><h3>20 ft Container Restroom</h3><span>Facilities</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$14,900</strong></div></div><p class="fineprint">Starting retail unit prices in USD for standard configurations. Origin handling, international freight, insurance, customs duties and tariffs, taxes, destination delivery, crane services, permits, foundations, utility connections, installation and upgrades are additional unless included in your written quotation. Prices and availability are subject to confirmation; local building and occupancy requirements must be reviewed before ordering. No purchase commitment is created by an inquiry.</p><a class="btn gold" href="cost-calculator.html">Calculate shipping &amp; installed costs</a> <a class="btn" href="#contact">Request your personalized quotation</a></div></section>
+    <section id="retail-pricing"><div class="container"><div class="section-head"><span class="eyebrow">The collection · USD</span><h2>Exceptional design. Considered pricing.</h2><p>Explore starting U.S. retail prices for our modular collection, manufactured by Guangzhou Perfect Dream Modular House Co., Ltd. in Guangdong, China. Each project is quoted individually.</p></div><div class="cost-list"><div class="cost-row"><div><h3>20 ft Sky Mirror House</h3><span>Furnished configuration</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$24,900</strong></div><div class="cost-row"><div><h3>40 ft Sky Mirror House</h3><span>Furnished configuration</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$41,900</strong></div><div class="cost-row"><div><h3>Ocean Sky Mirror Hotel</h3><span>Ocean Sky configuration</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$23,900</strong></div><div class="cost-row"><div><h3>20 ft Australia Apartment</h3><span>Compact living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$18,900</strong></div><div class="cost-row"><div><h3>40 ft Australia Apartment</h3><span>Extended living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$29,900</strong></div><div class="cost-row"><div><h3>20 ft Pure Apple Cabin</h3><span>Compact cabin</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$20,900</strong></div><div class="cost-row"><div><h3>Dazonghu Container Hotel</h3><span>Hospitality</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$21,900</strong></div><div class="cost-row"><div><h3>Container Tent Hotel</h3><span>Glamping</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$23,900</strong></div><div class="cost-row"><div><h3>20 ft Slide-out Container</h3><span>Expandable living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$34,900</strong></div><div class="cost-row"><div><h3>Luxury Two-floor Hotel</h3><span>Multi-suite hospitality</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$109,900</strong></div><div class="cost-row"><div><h3>20 ft Container Pool</h3><span>Outdoor living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$24,900</strong></div><div class="cost-row"><div><h3>40 ft Container Pool</h3><span>Outdoor living</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$34,900</strong></div><div class="cost-row"><div><h3>20 ft Mobile Kitchen / Shop / Bar</h3><span>Commercial</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$18,900</strong></div><div class="cost-row"><div><h3>20 ft Container Restroom</h3><span>Facilities</span></div><strong><small style="display:block;text-align:right;font:500 .7rem system-ui;color:var(--muted)">From</small>$14,900</strong></div></div><p class="fineprint">Starting retail unit prices in USD for standard configurations. Origin handling, international freight, insurance, customs duties and tariffs, taxes, destination delivery, crane services, permits, foundations, utility connections, installation and upgrades are additional unless included in your written quotation. Prices and availability are subject to confirmation; local building and occupancy requirements must be reviewed before ordering. No purchase commitment is created by an inquiry.</p><a class="btn gold" href="cost-calculator.html">Calculate shipping &amp; installed costs</a> <a class="btn" href="#contact">Request your personalized quotation</a></div></section>
     <section id="europe">
       <div class="container">
         <div class="section-head"><span class="eyebrow">European Housing & Hospitality</span><h2>Explore a pilot before scaling.</h2><p>European expansion is a proposed future initiative only. Our current distribution territory is the United States; no European sales, offers, or distribution rights are represented. Any future European pilot requires a written territorial authorization from the supplier, local approvals and separate project agreements.</p></div>
